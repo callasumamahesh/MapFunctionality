@@ -1,21 +1,19 @@
-// Import the functions you need from the SDKs you need
-
 import { initializeApp } from "firebase/app";
-import { getFirestore } from "firebase/firestore"
+import { getFirestore } from "firebase/firestore";
 
+// Use environment variables for Firebase config
 const firebaseConfig = {
-  apiKey: "AIzaSyAxEj0HMQoeLnJC0hR9WiBGolnEP7Xlobk",
-  authDomain: "stup-7857c.firebaseapp.com",
-  projectId: "stup-7857c",
-  storageBucket: "stup-7857c.appspot.com",
-  messagingSenderId: "875579690211",
-  appId: "1:875579690211:web:7af3a4f0b27bc3980409d6",
-  measurementId: "G-W08NCW8D4K"
+  apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
+  authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID,
+  measurementId: process.env.NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID
 };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-const db = getFirestore(app)
+const db = getFirestore(app);
+
 export { db };
-
-

@@ -16,11 +16,11 @@ function LocationMarker({ location }) {
 
 function Map({ locations }) {
   let initialCenter = [17.824400, 79.187900];
-  let initialZoom = 7;
+  let initialZoom = 9;
 
   if (locations.length === 1) {
     initialCenter = [locations[0].Latitude, locations[0].Longitude];
-    initialZoom = 15; // Set appropriate zoom level
+    initialZoom = 16; // Set appropriate zoom level
   }
 
   return (
