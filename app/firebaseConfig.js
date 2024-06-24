@@ -21,7 +21,14 @@ const app = !getApps().length ? initializeApp(firebaseConfig) : getApp();
 const auth = getAuth();
 const db = getFirestore(app);
 
-// Initialize Firebase Analytics (only on the client side)
-const analytics = app.name && typeof window !== 'undefined' ? getAnalytics(app) : null;
+// Function to initialize Analytics only on the client-side
+const initializeAnalytics = () => {
+  if (typeof window !== 'undefined' && app.name) {
+    return getAnalytics(app);
+  }
+  return null;
+};
+
+const analytics = initializeAnalytics();
 
 export { auth, analytics, db };
