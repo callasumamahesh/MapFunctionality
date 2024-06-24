@@ -1,4 +1,5 @@
-'use client'
+'use client';
+
 import React, { useEffect, useState } from 'react';
 import { onSnapshot, collection } from 'firebase/firestore';
 import { db } from './firebaseConfig';
@@ -24,21 +25,20 @@ async function fetchData(callback) {
 
 function Page() {
   const [studata, setStuData] = useState([]);
-  const [locationdata, setLocationData] = useState([])
+  const [locationdata, setLocationData] = useState([]);
 
   useEffect(() => {
     fetchData(setStuData);
-    fetchData(setLocationData)
+    fetchData(setLocationData);
   }, []);
 
-
   const handleStudentLocation = (studentLocation) => {
-    setLocationData([studentLocation])
-  }
+    setLocationData([studentLocation]);
+  };
 
   const handleAllLocations = () => {
-    fetchData(setLocationData)
-  }
+    fetchData(setLocationData);
+  };
 
   return (
     <>
@@ -75,5 +75,3 @@ function Page() {
 }
 
 export default Page;
-
-
