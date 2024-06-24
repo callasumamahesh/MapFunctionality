@@ -24,12 +24,13 @@ async function fetchData(callback) {
 
 function Page() {
   const [studata, setStuData] = useState([]);
-  const [locationdata,setLocationData] = useState([])
+  const [locationdata, setLocationData] = useState([])
 
   useEffect(() => {
     fetchData(setStuData);
     fetchData(setLocationData)
   }, []);
+
 
   const handleStudentLocation = (studentLocation) => {
     setLocationData([studentLocation])
