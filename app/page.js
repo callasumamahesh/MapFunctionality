@@ -4,7 +4,9 @@ import React, { useEffect, useState } from 'react';
 import { onSnapshot, collection } from 'firebase/firestore';
 import { db } from './firebaseConfig';
 import StudentForm from './components/Form';
-import Map from './components/Map';
+// import Map from './components/Map';
+import dynamic from 'next/dynamic';
+const Map = dynamic(() => import('./components/Map'), { ssr: false });
 
 async function fetchData(callback) {
   try {
